@@ -1,0 +1,7 @@
+﻿  dop3lab5.cpp
+E:\Универ\Лабы ОАиП\lab5\dop3lab5\dop3lab5\dop3lab5.cpp(8,30): warning C4101: x: неиспользованная локальная переменная
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  dop3lab5.vcxproj -> E:\Универ\Лабы ОАиП\lab5\dop3lab5\x64\Release\dop3lab5.exe

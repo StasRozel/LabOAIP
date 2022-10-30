@@ -1,0 +1,5 @@
+﻿  lab04.cpp
+E:\Универ\Лабы ОАиП\lab4\lab04\lab04\lab04.cpp(8,25): warning C4305: инициализация: усечение из "double" в "float"
+E:\Универ\Лабы ОАиП\lab4\lab04\lab04\lab04.cpp(8,34): warning C4305: инициализация: усечение из "double" в "float"
+E:\Универ\Лабы ОАиП\lab4\lab04\lab04\lab04.cpp(13,31): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  lab04.vcxproj -> E:\Универ\Лабы ОАиП\lab4\lab04\x64\Debug\lab04.exe

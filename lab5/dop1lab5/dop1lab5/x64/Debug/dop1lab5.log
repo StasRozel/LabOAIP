@@ -1,0 +1,8 @@
+﻿  dop1lab5.cpp
+E:\Универ\Лабы ОАиП\lab5\dop1lab5\dop1lab5\dop1lab5.cpp(18,11): warning C4305: *=: усечение из "double" в "float"
+E:\Универ\Лабы ОАиП\lab5\dop1lab5\dop1lab5\dop1lab5.cpp(25,18): warning C4244: аргумент: преобразование "float" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+  dop1lab5.vcxproj -> E:\Универ\Лабы ОАиП\lab5\dop1lab5\x64\Debug\dop1lab5.exe
