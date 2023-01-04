@@ -31,6 +31,7 @@ void task1() {
 		}
 		cout << a[i] << " ";
 	}
+	cout << endl;
 }
 
 void task2() {
@@ -44,16 +45,17 @@ void task2() {
 	for (i = 0; i < n; i++)
 	{
 		a[i] = rand() % 99;
-		cout << a[i] << " " << endl;
+		cout << a[i] << " ";
 		sum = (a[n - 1] + a[n - 2] + a[n - 3]) / 3;
 		
 	}
-	cout << "Среднее арифметическое: " << sum << endl;
+	cout << endl << "Среднее арифметическое: " << sum << endl;
 	for (i = 0; i < n; i++)
 	{
 		if (sum == a[i])
 		{
-			cout << a[i] << endl;
+			cout << "Номер элемента " << i + 1 << endl;
+			cout << "Число равное среднему арифметическому " << a[i] << endl;
 		}
 		
 	}
@@ -66,5 +68,7 @@ int main()
 	//task1();
 	//task2();
 	dopTask1();
+	//dopTask2();
+	//dopTask3();
 }
 

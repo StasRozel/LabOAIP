@@ -1,0 +1,3 @@
+﻿  dop2lab12.cpp
+E:\Универ\Лабы ОАиП\lab12\dop2lab12\dop2lab12\dop2lab12.cpp(24,41): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  dop2lab12.vcxproj -> E:\Универ\Лабы ОАиП\lab12\dop2lab12\x64\Debug\dop2lab12.exe

@@ -1,6 +1,2 @@
 ﻿  Dop1Lab8.cpp
-E:\Универ\Лабы ОАиП\Dop1Lab8\Dop1Lab8\Dop1Lab8.cpp(53,11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-E:\Универ\Лабы ОАиП\Dop1Lab8\Dop1Lab8\Dop1Lab8.cpp(55,11): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-E:\Универ\Лабы ОАиП\Dop1Lab8\Dop1Lab8\Dop1Lab8.cpp(60,12): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-E:\Универ\Лабы ОАиП\Dop1Lab8\Dop1Lab8\Dop1Lab8.cpp(78,9): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-  Dop1Lab8.vcxproj -> E:\Универ\Лабы ОАиП\Dop1Lab8\x64\Debug\Dop1Lab8.exe
+  Dop1Lab8.vcxproj -> E:\Универ\Лабы ОАиП\lab8\lab8\x64\Debug\Dop1Lab8.exe

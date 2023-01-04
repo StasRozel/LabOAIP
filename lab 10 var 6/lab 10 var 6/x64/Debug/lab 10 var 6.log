@@ -1,0 +1,9 @@
+﻿  lab 10 var 6.cpp
+E:\Универ\Лабы ОАиП\lab 10 var 6\lab 10 var 6\lab 10 var 6.cpp(10,10): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+E:\Универ\Лабы ОАиП\lab 10 var 6\lab 10 var 6\lab 10 var 6.cpp(11,12): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+E:\Универ\Лабы ОАиП\lab 10 var 6\lab 10 var 6\lab 10 var 6.cpp(12,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+E:\Универ\Лабы ОАиП\lab 10 var 6\lab 10 var 6\lab 10 var 6.cpp(29,18): warning C4101: m: неиспользованная локальная переменная
+E:\Универ\Лабы ОАиП\lab 10 var 6\lab 10 var 6\lab 10 var 6.cpp(29,9): warning C4101: B: неиспользованная локальная переменная
+E:\Универ\Лабы ОАиП\lab 10 var 6\lab 10 var 6\lab 10 var 6.cpp(29,21): warning C4101: q: неиспользованная локальная переменная
+E:\Универ\Лабы ОАиП\lab 10 var 6\lab 10 var 6\lab 10 var 6.cpp(29,30): warning C4101: maskB: неиспользованная локальная переменная
+  lab 10 var 6.vcxproj -> E:\Универ\Лабы ОАиП\lab 10 var 6\x64\Debug\lab 10 var 6.exe

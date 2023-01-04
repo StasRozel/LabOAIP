@@ -1,116 +1,91 @@
-﻿#include <iostream> 
+﻿#include<iostream>
+#include <string>
 using namespace std;
-//Вариант 5
-double F(double x)
+double func(double x)
 {
-	return (5 - pow(x, 2));
+	return 1 + pow(x, 3);
+}
+double fx(double x) {
+	return 2*x - 1 + (pow(x, 3));
 }
 
-double F1(double x)
+double diff(double x)
 {
-	return (2 - pow(x, 2) - x);
+	const double h = 1e-10;
+	return ((fx(x + h) - fx(x - h)) / (2.0 * h));
+}
+double diff2(double x) {
+	const double h = 1e-10;
+	return ((diff(x + h) - diff(x - h)) / (2.0 * h));
 }
 
-double F1_1(double x) {
-	return (-2*x - 1);
-}
-double F1__1(double x) {
-	return (-x);
-}
 
-void metod1() {
-	double a, b, h, x, s = 0;
-	double n = 200;
 
-	cout << "Введите приделы интегрирования ";
-	cin >> a >> b;
+int main() {
 
-	h = (b - a) / n;
-	x = a + h;
+	setlocale(LC_ALL, "rus");
+	//____________________________________________
+	// Метод пораболы
 
-	do
-	{
-		s += h * (F(x) + F(x + h)) / 2;
-		x += h;
-
-	} while (x <= (b - h));
-	cout << s << endl;
-}
-
-void metod2() {
-	float a, b, h, x = 0, s1 = 0, s2 = 0, z;
-	float n = 200;
-
-	cout << "Введите приделы интегрирования ";
-	cin >> a >> b;
-
+	double a = 1, b = 5, n = 200, h, s1, s2, i, x, z;
 	h = (b - a) / (2 * n);
 	x = a + 2 * h;
-	int i = 0;
+	s1 = 0;
+	s2 = 0;
+	i = 1;
 
-	while (i < n)
-	{
-		s1 = s1 + F(x);
+	for (int i = 1; i < n; i++) {
+		s2 += func(x);
 		x += h;
-		s2 = s2 + F(x);
+		s1 += func(x);
 		x += h;
-		i++;
 	}
+	z = h / 3 * (func(a) + 4 * func(a + h) + 4 * s1 + 2 * s2 + func(b));
+	cout << "integral(метод пораболы) = " << z << endl;
+	//____________________________________________
+	// Метод трапеции
 
-	z = h / 3 * (F(a) + 4 * F(a + h) + 4 * s1 + 2 * s2 + F(b));
-
-	cout << z;
-}
-
-void metod3() {
-	float a, b, e, x, x1;
-	cout << "Введите а, b, e \n";
-	cin >> a >> b >> e;
-	x1 = a;
-	if (F1(a) * F1__1(a))
+	double s;
+	setlocale(0, "");
+	h = (b - a) / n;
+	x = a;
+	s = 0;
+	for (int i = 0; i < n; i++)
 	{
-		x1 = a;
+		s = s + 0.5 * (func(x) + func(x + h)) * h;
+		x = x + h;
 	}
-	else if (F1(b) * F1__1(b)) {
-		x1 = b;
-	}
-	x = x1;
-	x1 = x - (F1(x) / F1_1(x));
-	if (abs(x1 - x) > e) {
+	cout << "integral(метод трапеции) = " << s << endl;
+	//____________________________________________
+	// Метод касательных
 
-	}
-	else {
-		printf("%.4f", x);
-	}
-}
+	cout << "Метод касательных\n";
+	double x1, e = 0.00001;
+	cout << "a="; cin >> a;
+	cout << "b="; cin >> b;
+	if (fx(a) * diff2(a) > 0) x1 = a;
+	else x1 = b;
+	do {
+		x1 = x1 - fx(x1) / diff(x1);
+	} while (abs(fx(x1)) >= e);
+	cout << "x= " << x1 << "\n";
 
-void metod4() {
-	float a, b, e, x;
-	cout << "Введите а, b, e \n";
-	cin >> a >> b >> e;
-
+	/*Метод дихотомии*/
+	//____________________________________________
+	cout << "Метод дихотомии\n";
+	cout << "a = ";
+	cin >> a;
+	cout << "b = ";
+	cin >> b;
 	x = (a + b) / 2;
-	if (F1(x) * F1(a) <= 0)
+	while ((abs(b - a)) > e)
 	{
-		b = x;
-	}
-	else {
-		a = x;
-	}
-	while (abs(a - b) > 2 * e)
-	{
+		if (fx(a) * fx(x) < 0)
+			b = x;
+		else
+			a = x;
 		x = (a + b) / 2;
-		printf("%.4f", x);
 	}
-	printf("%.4f", x);
-}
+	cout << "x= " << x << endl;
 
-int main()
-{
-	setlocale(LC_ALL, "Rus");
-	metod1();
-	metod2();
-	metod3();
-	metod4();
-	return 0;
 }

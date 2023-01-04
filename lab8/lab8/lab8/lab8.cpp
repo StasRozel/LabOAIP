@@ -8,14 +8,11 @@ double func(double x)
 double fx(double x) {
 	return(pow(x, 3) + x - 2);
 }
-double fun(double x)
-{
-	return pow(x, 3) - 1;
-}
+
 double diff(double x)
 {
 	const double h = 1e-10;
-	return ((fun(x + h) - fun(x - h)) / (2.0 * h));
+	return ((fx(x + h) - fx(x - h)) / (2.0 * h));
 }
 double diff2(double x) {
 	const double h = 1e-10;
@@ -25,7 +22,7 @@ double diff2(double x) {
 
 
 int main() {
-	
+
 	setlocale(LC_ALL, "rus");
 	//____________________________________________
 	// Метод пораболы
@@ -49,58 +46,45 @@ int main() {
 	// Метод трапеции
 
 	double s;
-	setlocale(0, "");
 	h = (b - a) / n;
 	x = a;
 	s = 0;
 	for (int i = 0; i < n; i++)
 	{
-		s = s + 0.5 * (fun(x) + fun(x + h)) * h;
+		s = s + 0.5 * (func(x) + func(x + h)) * h;
 		x = x + h;
 	}
 	cout << "integral(метод трапеции) = " << s << endl;
 	//____________________________________________
 	// Метод касательных
 
-	double e = 0.0001, x1;
-	a = 0;
-	b = 0;
-	if (diff2(x) * fx(x) > 0) {
-		a = x;
-	}
-	else
-	{
-		b = x;
-	}
-	x1 = x;
-	x1 = x - (fx(x) / diff(x));
-	if (abs(x1 - x) > e) {
-		cout << "x = " << x << endl;
-	}
-	else {
-		cout << "x = " << x << endl;
-	}
+	cout << "Метод касательных\n";
+	double x1, e = 0.00001;
+	cout << "a="; cin >> a;
+	cout << "b="; cin >> b;
+	if (fx(a) * diff2(a) > 0) x1 = a;
+	else x1 = b;
+	do {
+		x1 = x1 - fx(x1) / diff(x1);
+	} while (fabs(fx(x1)) >= e);
+	cout << "x= " << x1 << "\n";
+
+	/*Метод дихотомии*/
 	//____________________________________________
-	//Метод дихотомии
+	cout << "Метод дихотомии\n";
 	cout << "a = ";
 	cin >> a;
 	cout << "b = ";
 	cin >> b;
-	for (int i = 0; i <= 50; i + e) {
-		if (fx(x) * fx(a) <= 0) {
+	x = (a + b) / 2;
+	while ((fabs(b - a)) > e)
+	{
+		if (fx(a) * fx(x) < 0)
 			b = x;
-		}
 		else
-		{
 			a = x;
-		}
-		if (abs(a - b) > 2 * e) {
-			cout << "x(метод дихотомии) = " << x << endl;
-			break;
-		}
-		else
-		{
-			x /= 2;
-		}
+		x = (a + b) / 2;
 	}
+	cout << "x= " << x << endl;
+
 }

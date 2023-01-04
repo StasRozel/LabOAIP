@@ -1,0 +1,4 @@
+﻿  calendar.cpp
+E:\Универ\Лабы ОАиП\lab9\calendar\calendar.cpp(9,51): error C2601: weekday: недопустимые локальные определения функций
+E:\Универ\Лабы ОАиП\lab9\calendar\calendar.cpp(3): message : эта строка содержит скобку "{", которая пока не имеет парной
+E:\Универ\Лабы ОАиП\lab9\calendar\calendar.cpp(16,11): error C2065: Weekday: необъявленный идентификатор
